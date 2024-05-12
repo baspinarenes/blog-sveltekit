@@ -27,3 +27,11 @@ export function replaceUrl(url: string) {
 export function setCookie(name: string, value: string) {
 	document.cookie = `${name}=${value};path=/`;
 }
+
+export function formatDate(date: Date, language: string) {
+	return date.toLocaleDateString(language, {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric'
+	});
+}

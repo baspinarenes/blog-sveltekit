@@ -1,0 +1,83 @@
+<script lang="ts">
+	import { t } from '$lib/i18n';
+	import { page } from '$app/stores';
+	import { ContentMenuItem } from '$lib/components';
+
+	$: title = $t(`common.navigation.${$page.params.category}`);
+	const contents = [
+		{
+			title: 'Introduction',
+			date: new Date(),
+			slug: '/introduction1',
+			tags: ['aaa', 'bbb'],
+			views: 100,
+			readingTime: '5 min'
+		},
+		{
+			title: 'Introduction',
+			date: new Date(),
+			slug: '/introduction2',
+			tags: ['aaa', 'bbb'],
+			views: 100,
+			readingTime: '5 min'
+		},
+		{
+			title: 'Introduction',
+			date: new Date(),
+			slug: '/introduction3',
+			tags: ['aaa', 'bbb'],
+			views: 100,
+			readingTime: '5 min'
+		},
+		{
+			title: 'Introduction',
+			date: new Date(),
+			slug: '/introduction4',
+			tags: ['aaa', 'bbb'],
+			views: 100,
+			readingTime: '5 min'
+		}
+	];
+</script>
+
+<div class="content-menu">
+	<h2 class="header">{title}</h2>
+	<div class="items">
+		{#each contents as content}
+			<ContentMenuItem
+				title={content.title}
+				slug={content.slug}
+				date={content.date}
+				views={content.views}
+				readingTime={content.readingTime}
+			/>
+		{/each}
+	</div>
+</div>
+
+<style lang="scss">
+	.content-menu {
+		display: flex;
+		flex-direction: column;
+		width: 300px;
+		height: 100%;
+		border-right: 1px solid var(--border-color);
+		background-color: var(--color-bg);
+
+		.header {
+			font-size: 14px;
+			padding: 16px;
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.items {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-xs);
+			padding: var(--spacing-md);
+			overflow-y: auto;
+
+			@include scroll-bar(6px, 8px);
+		}
+	}
+</style>

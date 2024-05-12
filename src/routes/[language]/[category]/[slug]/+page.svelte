@@ -2,7 +2,8 @@
 	import { t } from '$lib/i18n';
 	import { page } from '$app/stores';
 
-	const {category, slug}= $page.params;
+	$: category = $page.params.category;
+	$: slug = $page.params.slug;
 </script>
 
 <section>

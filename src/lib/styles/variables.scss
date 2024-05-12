@@ -9,7 +9,7 @@
   --color-gray: #94a3b8;
   --color-light-gray: #e5e7eb;
 
-  --color-bg-0: #fafafa;
+  --color-bg: #fafafa;
   --color-text: var(--color-black);
   --color-helper: #666;
 
@@ -34,7 +34,7 @@
   --side-menu-width: 24vw;
   --side-menu-max-width: 288px;
   --side-menu-min-width: 240px;
-  --side-menu-bg: var(--color-bg-0);
+  --side-menu-bg: var(--color-bg);
 
   --side-menu-navigation-active-text-color: var(--color-white);
   --side-menu-navigation-active-bg: var(--color-black);

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { isAvaliableCategoryForLanguage, isExternal } from '$lib/helpers';
+	import { isExternal } from '$lib/helpers';
 	import { Icon } from '$lib/ui-kit';
 	import { t } from '$lib/i18n';
 
@@ -8,7 +8,10 @@
 	export let href: string;
 
 	const external = isExternal(href);
-	$: active = `/${$page.params.language}${href}` === $page.url.pathname;
+	$: active =
+		!external && href === '/'
+			? `${$page.url.pathname}/` === `/${$page.params.language}${href}`
+			: $page.url.pathname.includes(`/${$page.params.language}${href}`);
 </script>
 
 <a

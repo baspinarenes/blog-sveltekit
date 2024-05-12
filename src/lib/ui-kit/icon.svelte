@@ -13,7 +13,9 @@
 		IconTools,
 		IconLanguage,
 		IconMenu2,
-		IconMasksTheater
+		IconMasksTheater,
+		IconClock,
+		IconEye
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
@@ -35,7 +37,9 @@
 
 		external: IconArrowUpRight,
 		language: IconLanguage,
-		menu: IconMenu2
+		menu: IconMenu2,
+		clock: IconClock,
+		view: IconEye
 	}[name];
 </script>
 
