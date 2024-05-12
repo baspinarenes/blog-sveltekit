@@ -1,22 +1,32 @@
 <script>
-	import { HamburgerMenuButton, LanguageSwitcher } from '$lib/components';
+	import {
+		HamburgerMenuButton,
+		LanguageSwitcher,
+		HeaderTitle
+	} from '$lib/components';
+	import { Spacer } from '$lib/ui-kit';
+
+	export let titleKey = '';
 </script>
 
-<div>
+<div class="mobile-header">
 	<HamburgerMenuButton />
+	<Spacer size="md" type="width" />
+	<HeaderTitle {titleKey} />
+	<Spacer type="width" />
 	<LanguageSwitcher />
 </div>
 
 <style lang="scss">
-	div {
+	.mobile-header {
 		display: flex;
-		justify-content: space-between;
+		align-items: center;
 		padding: var(--spacing-md) var(--spacing-lg);
-		border: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
 	}
 
 	@include desktop {
-		div {
+		.mobile-header {
 			display: none;
 		}
 	}

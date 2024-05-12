@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { t } from '$lib/translation';
+	import { t } from '$lib/i18n';
 
 	export let translateKey: string;
 	const title = $t(`common.navigation.${translateKey}`);

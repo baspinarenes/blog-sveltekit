@@ -26,26 +26,24 @@ const config: Config = {
 			}
 		}
 	},
+	fallbackLanguage: 'en',
 	languages: ['tr', 'en'],
 	navigations: {
 		tr: {
-			home: '/',
-			journey: '/journey',
-			tool: '/tool',
-			article: '/article',
-			snippet: '/snippet',
-			writing: '/writing',
-			culture: '/culture'
+			home: '/tr',
+			journey: '/tr/journey',
+			tool: '/tr/tool',
+			article: '/tr/article',
+			snippet: '/tr/snippet',
+			writing: '/tr/writing',
+			culture: '/tr/culture'
 		},
 		en: {
-			home: '/',
-			journey: '/journey',
-			tool: '/tool',
-			article: '/article',
-			snippet: '/snippet',
-			writing: '/writing',
-			culture: '/culture',
-			thought: '/thought'
+			home: '/en',
+			journey: '/en/journey',
+			tool: '/en/tool',
+			article: '/en/article',
+			snippet: '/en/snippet'
 		}
 	},
 	copyright: 'Inspired by onur.dev'

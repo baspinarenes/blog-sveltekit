@@ -1,5 +1,5 @@
 <script>
-	import { t } from '$lib/translation';
+	import { t } from '$lib/i18n';
 </script>
 
 <svelte:head>
@@ -7,4 +7,6 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>{$t('common.home')}</section>
+<section>
+	<h1>{$t('common.navigation.home')}</h1>
+</section>

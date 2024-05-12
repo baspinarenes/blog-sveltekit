@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icon, Button } from '$lib/ui-kit';
-	import { setLocale, locale } from '$lib/translation';
+	import { setLocale, locale } from '$lib/i18n';
 	import FlagTr from '$lib/assets/images/flags/tr.png?enhanced';
 	import FlagEn from '$lib/assets/images/flags/en.png?enhanced';
 

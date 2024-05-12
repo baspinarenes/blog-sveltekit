@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { isExternal } from '$lib/helpers';
 	import { Icon } from '$lib/ui-kit';
-	import { t } from '$lib/translation';
+	import { t } from '$lib/i18n';
 
 	export let label: string;
 	export let href: string;

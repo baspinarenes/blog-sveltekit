@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Spacer, Seperator } from '$lib/ui-kit';
 	import {
 		LanguageSwitcher,
@@ -17,7 +17,7 @@
 	<div class="body">
 		<Navigations />
 		{#if !hideLanguageSwitcher}
-			<Spacer minHeight={28} />
+			<Spacer min={28} />
 		{/if}
 		<Seperator />
 		<Socials />

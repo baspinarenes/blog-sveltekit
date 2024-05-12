@@ -15,5 +15,13 @@ const config: Config = {
 	]
 };
 
-export const { t, locale, locales, loading, loadTranslations, setLocale } =
-	new i18n(config);
+export const {
+	t,
+	locale,
+	locales,
+	loading,
+	loadTranslations,
+	setLocale,
+	initialized,
+	translations
+} = new i18n(config);

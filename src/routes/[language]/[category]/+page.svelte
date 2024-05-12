@@ -1,9 +1,9 @@
 <script>
-	import { CategoryTitle } from '$lib/components';
+	import { t } from '$lib/i18n';
 
 	export let data;
 </script>
 
 <section>
-	<CategoryTitle translateKey={data.category} />
+	<h1>{$t(`common.navigation.${data.category}`)}</h1>
 </section>

@@ -7,6 +7,7 @@ export type Config = {
 		email: string;
 		socials: Record<SocialPlatform, Social>;
 	};
+	fallbackLanguage: Language;
 	languages: string[];
 	navigations: Record<Language, Record<string, string>>;
 	copyright: string;
