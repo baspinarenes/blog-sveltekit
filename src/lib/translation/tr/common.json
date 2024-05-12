@@ -1,0 +1,17 @@
+{
+	"navigation": {
+		"home": "Anasayfa",
+		"journey": "Hikayem",
+		"tool": "Kullandığım Araçlar",
+		"article": "Makalelerim",
+		"snippet": "Snippet'larım",
+		"writing": "Yazılarım",
+		"culture": "Kitap & Film & Dizi",
+		"thought": "Düşüncelerim",
+
+		"twitter": "Twitter",
+		"github": "Github",
+		"linkedin": "Linkedin",
+		"youtube": "Youtube"
+	}
+}

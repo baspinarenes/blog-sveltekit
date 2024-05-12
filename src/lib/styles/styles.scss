@@ -1,0 +1,47 @@
+@import './reset.scss';
+@import './typography.scss';
+
+body {
+	margin: 0;
+	display: flex;
+	color: var(--color-text);
+	font-family: var(--font-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+}
+
+summary {
+	font-size: 12px;
+	color: var(--color-helper)
+}
+
+footer {
+	height: 30px;
+	font-size: 10px;
+	color: var(--color-gray);
+	text-align: center;
+
+	@include desktop {
+		height: fit-content;
+	}
+}
+
+input,
+button {
+	&:focus:not(:focus-visible) {
+		outline: none;
+	}
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}

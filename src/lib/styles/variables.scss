@@ -1,0 +1,42 @@
+:root {
+  --font-heading: 'Roboto', sans-serif;
+  --font-text: 'Roboto', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* Colors */
+  --color-white: #fafafa;
+  --color-black: #000;
+  --color-gray: #94a3b8;
+  --color-light-gray: #e5e7eb;
+
+  --color-bg-0: #fafafa;
+  --color-text: var(--color-black);
+  --color-helper: #666;
+
+  /* Spacing */
+  --spacing-none: 0px;
+  --spacing-2xs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+
+  /* Border */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Side Menu */
+  --side-menu-height: 100vh;
+  --side-menu-width: 24vw;
+  --side-menu-max-width: 288px;
+  --side-menu-min-width: 240px;
+  --side-menu-bg: var(--color-bg-0);
+
+  --side-menu-navigation-active-text-color: var(--color-white);
+  --side-menu-navigation-active-bg: var(--color-black);
+  --side-menu-navigation-hover-bg: var(--color-light-gray);
+}

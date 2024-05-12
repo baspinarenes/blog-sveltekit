@@ -1,0 +1,17 @@
+{
+	"navigation": {
+		"home": "Home",
+		"journey": "Journey",
+		"tool": "Tools",
+		"article": "Articles",
+		"snippet": "Snippets",
+		"writing": "Writings",
+		"culture": "Book & Movie & Series",
+		"thought": "Thoughts",
+
+		"twitter": "Twitter",
+		"github": "Github",
+		"linkedin": "Linkedin",
+		"youtube": "Youtube"
+	}
+}
