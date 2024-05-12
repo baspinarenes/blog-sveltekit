@@ -7,13 +7,11 @@ export type Config = {
 		email: string;
 		socials: Record<SocialPlatform, Social>;
 	};
-	fallbackLanguage: Language;
+	fallbackLanguage: string;
 	languages: string[];
-	navigations: Record<Language, Record<string, string>>;
+	navigations: Record<string, Record<string, string>>;
 	copyright: string;
 };
-
-export type Language = 'tr' | 'en';
 
 export type SocialPlatform = 'twitter' | 'github' | 'linkedin' | 'youtube';
 

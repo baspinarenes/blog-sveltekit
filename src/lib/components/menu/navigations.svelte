@@ -1,10 +1,9 @@
 <script lang="ts">
 	import config from '$lib/blog.config';
 	import Navigation from './navigation.svelte';
-	import type { Language } from '$lib/types';
 	import { locale } from '$lib/i18n';
 
-	$: navigations = Object.entries(config.navigations[$locale as Language]);
+	$: navigations = Object.entries(config.navigations[$locale]);
 </script>
 
 <div>

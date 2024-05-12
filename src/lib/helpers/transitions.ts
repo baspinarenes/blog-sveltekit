@@ -11,7 +11,6 @@ export function fly(
 		opacity = 0
 	} = {}
 ) {
-	console.log('flyflyflyfly');
 	const style = getComputedStyle(node);
 	const target_opacity = +style.opacity;
 	const transform = style.transform === 'none' ? '' : style.transform;
@@ -45,13 +44,6 @@ export function fly(
 		duration,
 		easing,
 		css: (t: number, u: number) => {
-			console.log({
-				t: t,
-				u: u,
-				css: `transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});
-        opacity: ${target_opacity - od * u}`
-			});
-
 			return `
       transform: ${transform} translate(${(1 - t) * xValue}${xUnit}, ${(1 - t) * yValue}${yUnit});
       opacity: ${target_opacity - od * u}`;
