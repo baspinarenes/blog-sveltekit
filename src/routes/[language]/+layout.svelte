@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '$lib/styles/styles.scss';
 	import { SideMenu, MobileHeader } from '$lib/components';
-
-	export let data;
+	import { page } from '$app/stores';
 </script>
 
 <div class="app">
@@ -10,7 +9,7 @@
 	<SideMenu />
 
 	<!-- Mobile -->
-	<MobileHeader titleKey={data.category} />
+	<MobileHeader titleKey={$page.params.category} />
 
 	<main>
 		<slot />

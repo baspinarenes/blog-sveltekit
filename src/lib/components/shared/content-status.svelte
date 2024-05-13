@@ -14,7 +14,7 @@
 
 <style lang="scss">
 	.content-status {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -25,6 +25,12 @@
 		p {
 			font-size: 18px;
 			color: rgb(207, 207, 207);
+		}
+	}
+
+	@include desktop {
+		.content-status {
+			display: flex;
 		}
 	}
 </style>

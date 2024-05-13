@@ -40,8 +40,46 @@ button {
 	}
 }
 
-@media (min-width: 720px) {
+a {
+	color: rgb(37, 99, 235);
+	font-weight: bold;
+
+	&:hover {
+		border-bottom: 2px solid currentColor;
+	}
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style-type: disc;
+	margin: 16px 0 28px 0;
+
+	li {
+		display: flex;
+		gap: 16px;
+
+
+		&::before {
+			content: "";
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 16px;
+			height: 16px;
+			background-color: rgb(217, 217, 217);
+			border-radius: 4px;
+			flex-shrink: 0;
+			z-index: 20;
+			outline: 4px solid #fff;
+			margin-top: 4px;
+		}
+	}
+}
+
+@include desktop {
 	h1 {
-		font-size: 2.4rem;
+		font-size: 32px;
 	}
 }

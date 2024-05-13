@@ -2,42 +2,11 @@
 	import { t } from '$lib/i18n';
 	import { page } from '$app/stores';
 	import { ContentMenuItem } from '$lib/components';
+	import type { Content } from '$lib/types';
+
+	export let contents: Content[] = [];
 
 	$: title = $t(`common.navigation.${$page.params.category}`);
-	const contents = [
-		{
-			title: 'Introduction',
-			date: new Date(),
-			slug: '/introduction1',
-			tags: ['aaa', 'bbb'],
-			views: 100,
-			readingTime: '5 min'
-		},
-		{
-			title: 'Introduction',
-			date: new Date(),
-			slug: '/introduction2',
-			tags: ['aaa', 'bbb'],
-			views: 100,
-			readingTime: '5 min'
-		},
-		{
-			title: 'Introduction',
-			date: new Date(),
-			slug: '/introduction3',
-			tags: ['aaa', 'bbb'],
-			views: 100,
-			readingTime: '5 min'
-		},
-		{
-			title: 'Introduction',
-			date: new Date(),
-			slug: '/introduction4',
-			tags: ['aaa', 'bbb'],
-			views: 100,
-			readingTime: '5 min'
-		}
-	];
 </script>
 
 <div class="content-menu">
@@ -47,7 +16,7 @@
 			<ContentMenuItem
 				title={content.title}
 				slug={content.slug}
-				date={content.date}
+				publishedAt={content.publishedAt}
 				views={content.views}
 				readingTime={content.readingTime}
 			/>

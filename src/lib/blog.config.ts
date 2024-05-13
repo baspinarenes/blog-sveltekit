@@ -36,7 +36,8 @@ const config: Config = {
 			article: '/article',
 			snippet: '/snippet',
 			writing: '/writing',
-			culture: '/culture'
+			culture: '/culture',
+			thought: '/thought'
 		},
 		en: {
 			home: '/',

@@ -15,7 +15,9 @@
 		IconMenu2,
 		IconMasksTheater,
 		IconClock,
-		IconEye
+		IconEye,
+		IconBrain,
+		IconPlus
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
@@ -34,12 +36,14 @@
 		snippet: IconCode,
 		tool: IconTools,
 		culture: IconMasksTheater,
+		thought: IconBrain,
 
 		external: IconArrowUpRight,
 		language: IconLanguage,
 		menu: IconMenu2,
 		clock: IconClock,
-		view: IconEye
+		view: IconEye,
+		plus: IconPlus
 	}[name];
 </script>
 

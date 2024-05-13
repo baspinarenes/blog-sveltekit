@@ -5,12 +5,12 @@
 	import { Icon } from '$lib/ui-kit';
 
 	export let title: string;
-	export let date: Date;
+	export let publishedAt: Date;
 	export let slug: string;
-	export let views: number;
-	export let readingTime: string;
+	export let views: number | undefined;
+	export let readingTime: number | undefined;
 
-	$: path = `/${$locale}/${$page.params.category}${slug}`;
+	$: path = `/${$locale}/${$page.params.category}/${slug}`;
 
 	$: active = $page.url.pathname.includes(
 		`/${$page.params.language}/${$page.params.category}${slug}`
@@ -20,7 +20,7 @@
 <a class="content-menu-item" class:active href={path}>
 	<span class="title">{title}</span>
 	<div class="summary">
-		<span class="date">{formatDate(date, $locale)}</span>
+		<span class="date">{formatDate(publishedAt, $locale)}</span>
 
 		{#if views}
 			<span class="views">
@@ -47,6 +47,8 @@
 		padding: var(--spacing-sm) var(--spacing-md);
 		font-size: 14px;
 		border-radius: var(--border-radius-md);
+		border: none;
+		color: var(--color-text);
 
 		&:hover {
 			background-color: var(--color-light-gray);

@@ -41,6 +41,9 @@
 		justify-content: space-between;
 		align-items: center;
 		font-size: 14px;
+		color: var(--color-text);
+		font-weight: normal;
+		border: none;
 
 		.left-side {
 			display: flex;

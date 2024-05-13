@@ -1,4 +1,7 @@
+import { replaceState } from '$app/navigation';
 import config from '$lib/blog.config';
+import { format } from 'date-fns';
+import { tr, enUS } from 'date-fns/locale';
 
 export function capitalize(str: string) {
 	return str.charAt(0).toUpperCase() + str.slice(1);
@@ -21,7 +24,7 @@ export function isAvaliableCategoryForLanguage(
 }
 
 export function replaceUrl(url: string) {
-	window.history.replaceState({}, '', url);
+	replaceState(url, {});
 }
 
 export function setCookie(name: string, value: string) {
@@ -29,9 +32,7 @@ export function setCookie(name: string, value: string) {
 }
 
 export function formatDate(date: Date, language: string) {
-	return date.toLocaleDateString(language, {
-		year: 'numeric',
-		month: 'short',
-		day: 'numeric'
+	return format(date, 'MMM dd, yyyy', {
+		locale: language === 'tr' ? tr : enUS
 	});
 }

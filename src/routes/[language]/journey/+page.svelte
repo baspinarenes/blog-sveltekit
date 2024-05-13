@@ -1,0 +1,25 @@
+<script lang="ts">
+	import { JourneyGroup } from '$lib/components';
+
+	export let data;
+
+	$: journey = data.journey;
+
+	$: orderedYears = Object.keys(journey).sort((a, b) =>
+		b.localeCompare(a)
+	);
+</script>
+
+<div class="journey-page">
+	{#each orderedYears as year}
+		<JourneyGroup {year} items={journey[year]} />
+	{/each}
+</div>
+
+<style lang="scss">
+	.journey-page {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+</style>

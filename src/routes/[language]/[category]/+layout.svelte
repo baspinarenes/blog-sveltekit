@@ -1,10 +1,12 @@
 <script lang="ts">
 	import '$lib/styles/styles.scss';
 	import { ContentMenu } from '$lib/components';
+
+	export let data;
 </script>
 
 <div>
-	<ContentMenu />
+	<ContentMenu contents={data.contents} />
 	<div class="content">
 		<slot />
 	</div>
@@ -17,8 +19,7 @@
 
 		.content {
 			display: flex;
-			justify-content: center;
-			align-items: center;
+			flex-direction: column;
 			width: 100%;
 		}
 	}
