@@ -5,12 +5,21 @@
 
 <div>
 	<ContentMenu />
-	<slot />
+	<div class="content">
+		<slot />
+	</div>
 </div>
 
 <style lang="scss">
 	div {
 		display: flex;
 		height: 100%;
+
+		.content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
 	}
 </style>

@@ -13,5 +13,9 @@
 		"github": "Github",
 		"linkedin": "Linkedin",
 		"youtube": "Youtube"
+	},
+	"status": {
+		"no-select": "Okumak istediğin bir içerik seç",
+		"not-found": "Farklı bir içerik seç"
 	}
 }

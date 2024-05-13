@@ -13,5 +13,9 @@
 		"github": "Github",
 		"linkedin": "Linkedin",
 		"youtube": "Youtube"
+	},
+	"status": {
+		"no-select": "Choose a content to view it",
+		"not-found": "Choose a different content to view"
 	}
 }

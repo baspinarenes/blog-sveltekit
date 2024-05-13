@@ -4,6 +4,8 @@ export const load = async ({ url, params }) => {
 	const { pathname } = url;
 
 	const initLocale = params.language;
+	console.log('initLocale', initLocale);
+	
 
 	await loadTranslations(initLocale, pathname);
 

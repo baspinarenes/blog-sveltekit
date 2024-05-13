@@ -8,7 +8,7 @@
 
 <div>
 	{#each navigations as navigation}
-		<Navigation label={navigation[0]} href={navigation[1]} />
+		<Navigation label={navigation[0]} href={`/${$locale}${navigation[1]}`} />
 	{/each}
 </div>
 

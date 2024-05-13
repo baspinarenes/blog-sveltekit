@@ -2,16 +2,17 @@
 	import { page } from '$app/stores';
 	import { isExternal } from '$lib/helpers';
 	import { Icon } from '$lib/ui-kit';
-	import { t } from '$lib/i18n';
+	import { t, locale } from '$lib/i18n';
 
 	export let label: string;
 	export let href: string;
 
 	const external = isExternal(href);
+
 	$: active =
-		!external && href === '/'
-			? `${$page.url.pathname}/` === `/${$page.params.language}${href}`
-			: $page.url.pathname.includes(`/${$page.params.language}${href}`);
+		!external && href === `/${$locale}/`
+			? `${$page.url.pathname}/` === href
+			: $page.url.pathname.includes(href);
 </script>
 
 <a

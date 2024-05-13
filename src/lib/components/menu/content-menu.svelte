@@ -57,9 +57,10 @@
 
 <style lang="scss">
 	.content-menu {
-		display: flex;
+		display: none;
 		flex-direction: column;
-		width: 300px;
+		width: 280px;
+		flex-shrink: 0;
 		height: 100%;
 		border-right: 1px solid var(--border-color);
 		background-color: var(--color-bg);
@@ -78,6 +79,12 @@
 			overflow-y: auto;
 
 			@include scroll-bar(6px, 8px);
+		}
+	}
+
+	@include desktop {
+		.content-menu {
+			display: flex;
 		}
 	}
 </style>
