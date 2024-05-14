@@ -2,6 +2,9 @@
 	import '$lib/styles/styles.scss';
 	import { SideMenu, MobileHeader } from '$lib/components';
 	import { page } from '$app/stores';
+	import '@fontsource/roboto/400.css';
+	import '@fontsource/roboto/500.css';
+	import '@fontsource-variable/jetbrains-mono';
 </script>
 
 <div class="app">
@@ -24,6 +27,7 @@
 
 		main {
 			width: 100%;
+			height: 100%;
 		}
 	}
 

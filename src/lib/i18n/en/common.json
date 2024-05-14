@@ -16,6 +16,7 @@
 	},
 	"status": {
 		"no-select": "Choose a content to view it",
-		"not-found": "Choose a different content to view"
+		"not-found": "Choose a different content to view",
+		"no-content": "There's nothing here yet :(<br/>Check back later!"
 	}
 }

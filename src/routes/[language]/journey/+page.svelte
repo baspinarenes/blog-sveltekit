@@ -3,7 +3,7 @@
 
 	export let data;
 
-	$: journey = data.journey;
+	$: journey = data.journey || {};
 
 	$: orderedYears = Object.keys(journey).sort((a, b) =>
 		b.localeCompare(a)
@@ -11,9 +11,11 @@
 </script>
 
 <div class="journey-page">
-	{#each orderedYears as year}
-		<JourneyGroup {year} items={journey[year]} />
-	{/each}
+	{#if journey}
+		{#each orderedYears as year}
+			<JourneyGroup {year} items={journey[year]} />
+		{/each}
+	{/if}
 </div>
 
 <style lang="scss">

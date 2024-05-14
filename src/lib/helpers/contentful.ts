@@ -92,15 +92,17 @@ export class ContentfulClient {
 				return items.map((item: ContentfulContent) => ({
 					title: item.title,
 					slug: item.slug,
+					category: item.category,
 					publishedAt: new Date(item.sys.publishedAt),
-					views: 100,
-					readingTime: 5
+					views: 0,
+					readingTime: 0
 				}));
 			},
 			staticPage: (item: ContentfulContent): Content => {
 				return {
 					title: item.title,
 					slug: item.slug,
+					category: item.category,
 					contentJson: item.content.json,
 					publishedAt: new Date(item.sys.publishedAt)
 				};

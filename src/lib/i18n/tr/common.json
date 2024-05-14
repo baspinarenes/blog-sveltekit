@@ -15,7 +15,8 @@
 		"youtube": "Youtube"
 	},
 	"status": {
-		"no-select": "Okumak istediğin bir içerik seç",
-		"not-found": "Farklı bir içerik seç"
+		"no-select": "Okumak istediğin içeriği seç.",
+		"not-found": "Farklı bir içerik seç.",
+		"no-content": "Burada henüz bir şey yok :(<br/>Daha sonra tekrar dene."
 	}
 }

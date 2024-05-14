@@ -8,10 +8,20 @@ const config: Config = {
 			loader: async () => (await import('./en/common.json')).default
 		},
 		{
+			locale: 'en',
+			key: 'home',
+			loader: async () => (await import('./en/home.json')).default
+		},
+		{
 			locale: 'tr',
 			key: 'common',
 			loader: async () => (await import('./tr/common.json')).default
-		}
+		},
+		{
+			locale: 'tr',
+			key: 'home',
+			loader: async () => (await import('./tr/home.json')).default
+		},
 	]
 };
 

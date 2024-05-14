@@ -12,6 +12,5 @@
 <style lang="scss">
 	h2 {
 		font-size: 14px;
-		font-weight: bold;
 	}
 </style>

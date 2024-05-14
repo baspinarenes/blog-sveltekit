@@ -22,12 +22,23 @@
 <style lang="scss">
 	.journey-group {
 		display: flex;
+		flex-direction: column;
 		gap: 12px;
 
 		.year {
 			font-size: 20px;
 			line-height: 36px;
-			font-weight: bold;
+			font-weight: 500;
+		}
+	}
+
+	@include desktop {
+		.journey-group {
+			flex-direction: row;
+
+			ul {
+				margin: 0;
+			}
 		}
 	}
 </style>

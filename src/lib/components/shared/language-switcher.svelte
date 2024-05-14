@@ -25,16 +25,7 @@
 </script>
 
 <Button class="language-switcher" onClick={switchLanguage}>
-	<enhanced:img
-		class="flag"
-		style:display={$locale === 'en' ? 'block' : 'none'}
-		src={FlagEn}
-	></enhanced:img>
-	<enhanced:img
-		class="flag"
-		style:display={$locale === 'tr' ? 'block' : 'none'}
-		src={FlagTr}
-	></enhanced:img>
+	<enhanced:img class="flag" src={flag} alt="English flag"></enhanced:img>
 	<div class="icon-container">
 		<Icon name="language" size={18} />
 	</div>

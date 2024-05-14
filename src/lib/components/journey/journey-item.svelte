@@ -23,10 +23,10 @@
 	.journey-item {
 		display: flex;
 		flex-direction: row;
-		padding-bottom: 32px;
 		gap: 18px;
 		margin-top: 5px;
 		position: relative;
+		padding-bottom: 12px;
 
 		&:not(:last-child)::after {
 			content: '';
@@ -59,13 +59,19 @@
 			font-size: 16px;
 
 			.title {
-				font-weight: bold;
+				font-weight: 500;
 			}
 
 			.image {
 				margin-top: 20px;
 				border-radius: 16px;
 			}
+		}
+	}
+
+	@include desktop {
+		.journey-item {
+			padding-bottom: 32px;
 		}
 	}
 </style>

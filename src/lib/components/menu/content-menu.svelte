@@ -18,6 +18,7 @@
 				slug={content.slug}
 				publishedAt={content.publishedAt}
 				views={content.views}
+				category={content.category}
 				readingTime={content.readingTime}
 			/>
 		{/each}

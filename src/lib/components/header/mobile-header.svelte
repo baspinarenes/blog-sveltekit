@@ -23,6 +23,9 @@
 		align-items: center;
 		padding: var(--spacing-md) var(--spacing-lg);
 		border-bottom: 1px solid var(--border-color);
+		position: fixed;
+		width: 100%;
+		background-color: var(--color-bg);
 	}
 
 	@include desktop {

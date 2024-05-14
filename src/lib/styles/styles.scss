@@ -1,5 +1,4 @@
 @import './reset.scss';
-@import './typography.scss';
 
 body {
 	margin: 0;
@@ -15,6 +14,12 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-heading);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1 {
+	margin-bottom: 24px;
 }
 
 summary {
@@ -42,11 +47,15 @@ button {
 
 a {
 	color: rgb(37, 99, 235);
-	font-weight: bold;
+	font-weight: 500;
 
 	&:hover {
 		border-bottom: 2px solid currentColor;
 	}
+}
+
+strong {
+	font-weight: 500;
 }
 
 ul {
@@ -54,26 +63,26 @@ ul {
 	flex-direction: column;
 	gap: 12px;
 	list-style-type: disc;
-	margin: 16px 0 28px 0;
+	margin: 20px 0 28px 0;
+	z-index: -1;
+	padding: 0;
 
 	li {
 		display: flex;
-		gap: 16px;
-
+		gap: 10px;
 
 		&::before {
 			content: "";
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 16px;
-			height: 16px;
-			background-color: rgb(217, 217, 217);
-			border-radius: 4px;
+			width: 6px;
+			height: 6px;
+			background-color: #000;
+			border-radius: 2px;
 			flex-shrink: 0;
-			z-index: 20;
 			outline: 4px solid #fff;
-			margin-top: 4px;
+			margin-top: 8px;
 		}
 	}
 }
@@ -81,5 +90,12 @@ ul {
 @include desktop {
 	h1 {
 		font-size: 32px;
+	}
+
+	ul {
+		padding-left: 0;
+		margin-left: 0;
+		margin-right: 0;
+		gap: 8px;
 	}
 }

@@ -1,26 +1,31 @@
 <script lang="ts">
 	import { t } from '$lib/i18n';
-	import { IconFile, IconFileUnknown } from '@tabler/icons-svelte';
+	import { IconFile } from '@tabler/icons-svelte';
 
-	export let type: 'no-select' | 'not-found';
+	export let type: 'no-select' | 'not-found' | 'no-content';
 
 	$: message = $t(`common.status.${type}`);
+
+	$: console.log(message);
 </script>
 
 <div class="content-status">
-	<IconFile size="64" />
-	<p>{message}</p>
+	<IconFile size="60" />
+	<p class="message">
+		{@html message}
+	</p>
 </div>
 
 <style lang="scss">
 	.content-status {
-		display: none;
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: var(--spacing-md);
-		height: 100%;
+		height: calc(100vh - 64px);
 		color: var(--color-light-gray);
+		width: 100%;
 
 		p {
 			font-size: 18px;
@@ -30,7 +35,13 @@
 
 	@include desktop {
 		.content-status {
-			display: flex;
+			height: 100%;
+
+			.message {
+				font-size: 18px;
+				text-align: center;
+				color: rgb(207, 207, 207);
+			}
 		}
 	}
 </style>

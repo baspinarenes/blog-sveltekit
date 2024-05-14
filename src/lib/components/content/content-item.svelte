@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { formatDate } from '$lib/helpers';
+	import { Icon } from '$lib/ui-kit';
 	import { locale } from '$lib/i18n';
 	import { page } from '$app/stores';
-	import { Icon } from '$lib/ui-kit';
 
 	export let title: string;
 	export let publishedAt: Date;
@@ -12,36 +12,34 @@
 	export let readingTime: number | undefined;
 
 	$: path = `/${$locale}/${$page.params.category}/${slug}`;
-	$: active = $page.url.pathname.includes(
-		`/${$page.params.language}/${$page.params.category}/${slug}`
-	);
 </script>
 
-<a class="content-menu-item" class:active href={path}>
-	<span class="title">{title}</span>
+<a class="content-item" href={path}>
+	<strong class="title">{title}</strong>
 	<div class="summary">
 		<time datetime={publishedAt.toISOString()}>
 			{formatDate(publishedAt, $locale)}
 		</time>
 		<span class="category"> #{category.toLowerCase().replace('/', '-')} </span>
 		<span class="views">
-			<Icon name="view" size={10} />
+			<Icon name="view" size={13} />
 			{views || '---'}
 		</span>
 		<span class="reading-time">
-			<Icon name="clock" size={10} />
+			<Icon name="clock" size={13} />
 			{readingTime || '---'}
 		</span>
 	</div>
 </a>
 
 <style lang="scss">
-	.content-menu-item {
-		padding: var(--spacing-sm) var(--spacing-md);
-		font-size: 14px;
-		border-radius: var(--border-radius-md);
-		border: none;
+	.content-item {
+		display: flex;
+		flex-direction: column;
+		padding: 12px 22px;
+		border-bottom: 1px solid var(--border-color);
 		color: var(--color-text);
+		gap: var(--spacing-xs);
 
 		&:hover {
 			background-color: var(--color-light-gray);
@@ -60,13 +58,13 @@
 		}
 
 		.title {
-			font-weight: 500;
+			line-height: 1.3;
 		}
 
 		.summary {
 			display: flex;
 			gap: var(--spacing-sm);
-			font-size: 12px;
+			font-size: 13px;
 			color: var(--color-gray);
 			font-weight: 400;
 

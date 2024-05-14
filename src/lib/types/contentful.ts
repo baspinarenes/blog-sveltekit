@@ -10,6 +10,7 @@ export type Content = {
 	title: string;
 	slug: string;
 	publishedAt: Date;
+	category: string;
 	views?: number;
 	readingTime?: number;
 	content?: any;

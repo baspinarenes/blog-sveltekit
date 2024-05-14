@@ -21,6 +21,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
+			padding-top: 50px;
 		}
 	}
 </style>
