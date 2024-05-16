@@ -42,6 +42,7 @@
 		border-radius: var(--border-radius-md);
 		border: none;
 		color: var(--color-text);
+		font-weight: 400;
 
 		&:hover {
 			background-color: var(--color-light-gray);
@@ -52,6 +53,7 @@
 			background-color: var(--side-menu-navigation-active-bg);
 			cursor: default;
 			pointer-events: none;
+			font-weight: 500;
 		}
 
 		&:not(.active):hover {
@@ -60,7 +62,7 @@
 		}
 
 		.title {
-			font-weight: 500;
+			line-height: 0.7;
 		}
 
 		.summary {
@@ -68,7 +70,6 @@
 			gap: var(--spacing-sm);
 			font-size: 12px;
 			color: var(--color-gray);
-			font-weight: 400;
 
 			.category {
 				margin-right: auto;

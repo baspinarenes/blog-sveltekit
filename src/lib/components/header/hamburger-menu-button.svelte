@@ -10,7 +10,7 @@
 </script>
 
 <Button onClick={toggleDrawer}>
-	<Icon name="menu" />
+	<Icon name="menu" size={18} />
 </Button>
 
 <Drawer {show} onClose={toggleDrawer}>

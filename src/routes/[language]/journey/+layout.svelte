@@ -15,7 +15,15 @@
 			max-width: 800px;
 			width: 100%;
 			margin: 0 auto;
-			padding: 68px 32px 32px;
+			padding: 32px 24px;
+		}
+	}
+
+	@include desktop {
+		.static-layout {
+			div {
+				padding: 96px 24px 32px;
+			}
 		}
 	}
 </style>

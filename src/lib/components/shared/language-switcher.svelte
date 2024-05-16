@@ -27,7 +27,7 @@
 <Button class="language-switcher" onClick={switchLanguage}>
 	<enhanced:img class="flag" src={flag} alt="English flag"></enhanced:img>
 	<div class="icon-container">
-		<Icon name="language" size={18} />
+		<Icon name="language" size={20} />
 	</div>
 </Button>
 

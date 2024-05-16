@@ -25,8 +25,14 @@
 		flex-direction: column;
 		gap: 12px;
 
+		ul {
+			margin: 0;
+			margin-bottom: 12px;
+			gap: 0;
+		}
+
 		.year {
-			font-size: 20px;
+			font-size: 24px;
 			line-height: 36px;
 			font-weight: 500;
 		}

@@ -3,7 +3,8 @@ import type { Config } from '$lib/types';
 const config: Config = {
 	title: 'Enes Başpınar',
 	author: {
-		name: 'Enes Başpınar',
+		name: 'Enes',
+		surname: 'Başpınar',
 		title: 'Software Engineer',
 		age: new Date().getFullYear() - 1999,
 		email: 'ensbaspinar@gmail.com',

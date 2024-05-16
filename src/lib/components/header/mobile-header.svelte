@@ -21,11 +21,14 @@
 	.mobile-header {
 		display: flex;
 		align-items: center;
-		padding: var(--spacing-md) var(--spacing-lg);
+		padding: var(--spacing-md) var(--spacing-xl);
 		border-bottom: 1px solid var(--border-color);
-		position: fixed;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
 		width: 100%;
 		background-color: var(--color-bg);
+		z-index: 30;
 	}
 
 	@include desktop {

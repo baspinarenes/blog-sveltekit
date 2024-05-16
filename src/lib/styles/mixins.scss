@@ -1,3 +1,9 @@
+@mixin tablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: 900px) {
     @content;
@@ -5,18 +11,20 @@
 }
 
 @mixin scroll-bar ($width, $height) {
-  &::-webkit-scrollbar {
-    width: $width;
-    height: $height;
-  }
-
-  /* Track */
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background: #888;
+  @include desktop {
+    &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+    }
+  
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
   }
 }

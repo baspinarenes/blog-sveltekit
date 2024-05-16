@@ -5,8 +5,6 @@
 	export let type: 'no-select' | 'not-found' | 'no-content';
 
 	$: message = $t(`common.status.${type}`);
-
-	$: console.log(message);
 </script>
 
 <div class="content-status">

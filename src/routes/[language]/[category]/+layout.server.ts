@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import config from '$lib/blog.config.js';
 import { ContentfulClient } from '$lib/helpers/contentful';
 import { redirect } from '@sveltejs/kit';
@@ -9,7 +8,7 @@ export async function load({ params }) {
 
 	if (!navigations[category]) {
 		return redirect(307, `/${language}`);
-	};
+	}
 
 	const client = new ContentfulClient({
 		language,

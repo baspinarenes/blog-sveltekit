@@ -13,7 +13,7 @@
 
 <div class="menu-content">
 	<ProfileCard />
-	<Spacer size="lg" />
+	<Spacer size="md" />
 	<div class="body">
 		<Navigations />
 		{#if !hideLanguageSwitcher}
@@ -40,6 +40,9 @@
 			display: flex;
 			flex-direction: column;
 			overflow-y: auto;
+
+			margin: 0 -20px;
+			padding: 0 20px;
 		}
 	}
 

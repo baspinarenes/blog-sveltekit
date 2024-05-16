@@ -21,7 +21,8 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			padding-top: 50px;
+			overflow-y: auto;
+			@include scroll-bar(12px, 8px);
 		}
 	}
 </style>

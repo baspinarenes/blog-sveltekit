@@ -36,3 +36,7 @@ export function formatDate(date: Date, language: string) {
 		locale: language === 'tr' ? tr : enUS
 	});
 }
+
+export function orderAlphabetically(a: string, b: string) {
+	return b.localeCompare(a);
+}

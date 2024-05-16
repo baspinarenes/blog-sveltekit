@@ -1,12 +1,65 @@
 <script>
-	import { t } from '$lib/i18n';
+	import { formatDate } from '$lib/helpers';
 	import { page } from '$app/stores';
+	import SvelteMarkdown from 'svelte-markdown';
+	import { CodeBlock, Blockquote } from '$lib/components';
 
-	$: category = $page.params.category;
-	$: slug = $page.params.slug;
+	export let data;
 </script>
 
-<section>
-	<h1>{$t(`common.navigation.${category}`)}</h1>
-	<h1>{slug}</h1>
-</section>
+{#if !data.content || !data.content.context}
+	<div>Error ocurred during data fetching.</div>
+{:else}
+	<article class="content-container">
+		<h1 class="title">{data.content.title}</h1>
+		<div class="summary">
+			<span>{formatDate(data.content.publishedAt, $page.params.language)}</span>
+			<span class="category">
+				#{$page.params.category.toLowerCase().replace('/', '-')}
+			</span>
+		</div>
+		<div class="content">
+			<SvelteMarkdown
+				source={data.content.context}
+				renderers={{ code: CodeBlock, blockquote: Blockquote }}
+			/>
+		</div>
+	</article>
+{/if}
+
+<style lang="scss">
+	.content-container {
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 24px 24px 12px;
+
+		.title {
+			font-size: 32px;
+			line-height: 32px;
+			font-weight: 500;
+			margin-bottom: 12px;
+		}
+
+		.summary {
+			display: flex;
+			gap: 12px;
+			font-size: 14px;
+			color: var(--color-gray);
+		}
+
+		.content {
+			margin-top: 18px;
+		}
+	}
+
+	@include desktop {
+		.content-container {
+			padding: 72px 24px 32px;
+
+			.content {
+				margin-top: 32px;
+			}
+		}
+	}
+</style>

@@ -2,6 +2,7 @@ export type Config = {
 	title: string;
 	author: {
 		name: string;
+		surname: string;
 		title: string;
 		age: number;
 		email: string;

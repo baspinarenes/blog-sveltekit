@@ -5,8 +5,6 @@
 
 {#if titleKey}
 	<h2>{$t(`common.navigation.${titleKey}`)}</h2>
-{:else}
-	<h2>{$t('common.navigation.home')}</h2>
 {/if}
 
 <style lang="scss">

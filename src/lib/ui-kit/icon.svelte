@@ -17,13 +17,18 @@
 		IconClock,
 		IconEye,
 		IconBrain,
-		IconPlus
+		IconPlus,
+		IconCategory,
+		IconCommand,
+		IconCopy,
+		IconCheck,
+		IconBug
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
 	export let size: number = 18;
 
-	let icon = {
+	$: icon = {
 		twitter: IconBrandTwitter,
 		github: IconBrandGithub,
 		linkedin: IconBrandLinkedin,
@@ -43,7 +48,12 @@
 		menu: IconMenu2,
 		clock: IconClock,
 		view: IconEye,
-		plus: IconPlus
+		plus: IconPlus,
+		category: IconCategory,
+		command: IconCommand,
+		copyboard: IconCopy,
+		complete: IconCheck,
+		bug: IconBug
 	}[name];
 </script>
 

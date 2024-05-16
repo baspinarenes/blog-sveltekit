@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { JourneyGroup } from '$lib/components';
+	import { orderAlphabetically } from '$lib/helpers/common.js';
 
 	export let data;
 
 	$: journey = data.journey || {};
+	
+	$: orderedYears = Object.keys(journey).sort(orderAlphabetically);
 
-	$: orderedYears = Object.keys(journey).sort((a, b) =>
-		b.localeCompare(a)
-	);
 </script>
 
 <div class="journey-page">

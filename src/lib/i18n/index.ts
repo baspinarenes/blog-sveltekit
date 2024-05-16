@@ -25,8 +25,8 @@ const config: Config = {
 	]
 };
 
-export const {
-	t,
+const {
+	t: typelessT,
 	locale,
 	locales,
 	loading,
@@ -35,3 +35,17 @@ export const {
 	initialized,
 	translations
 } = new i18n(config);
+
+
+const t = typelessT as any;
+
+export {
+	t,
+	locale,
+	locales,
+	loading,
+	loadTranslations,
+	setLocale,
+	initialized,
+	translations
+}

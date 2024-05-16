@@ -40,6 +40,10 @@
 			background-color: #e2e8f0;
 		}
 
+		&:last-child {
+			padding: 0;
+		}
+
 		.icon-container {
 			display: flex;
 			justify-content: center;

@@ -19,6 +19,7 @@ h6 {
 }
 
 h1 {
+	font-size: 24px;
 	margin-bottom: 24px;
 }
 
@@ -61,33 +62,121 @@ strong {
 ul {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 6px;
 	list-style-type: disc;
 	margin: 20px 0 28px 0;
 	z-index: -1;
 	padding: 0;
 
 	li {
-		display: flex;
-		gap: 10px;
-
+		list-style-type: none;
+		
 		&::before {
 			content: "";
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 6px;
-			height: 6px;
+			display: block;
+			width: 8px;
+			height: 8px;
 			background-color: #000;
 			border-radius: 2px;
 			flex-shrink: 0;
 			outline: 4px solid #fff;
 			margin-top: 8px;
+			margin-right: 16px;
+			float: left;
+			flex-shrink: 0;
 		}
 	}
 }
 
+ol {
+	counter-reset: li-count;
+  list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	margin: 40px 0;
+	z-index: -1;
+	padding: 0;
+
+	li {
+		counter-increment: li-count;
+		display: flex;
+		gap: 16px;
+		position: relative;
+		align-items: center;
+
+		&:not(:last-child) {
+			padding-bottom: 24px;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 1px;
+			height: 100%;
+			background-color: var(--border-color);
+			left: 14px;
+			top: 0;
+			position: absolute;
+			z-index: -1;
+		}
+
+		&::before {
+			content: counter(li-count);
+			font-weight: bold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 12px;
+			width: 26px;
+			height: 26px;
+			background-color: #000;
+			border-radius: 8px;
+			flex-shrink: 0;
+			outline: 4px solid #fff;
+			color: #fff;
+		}
+	}
+}
+
+article {
+	h2 {
+		font-size: 24px;
+		margin: 40px 0 20px;
+	}
+
+	h3 {
+		font-size: 20px;
+		margin: 36px 0 18px;
+	}
+
+	h4 {
+		font-size: 18px;
+		margin: 28px 0 14px;
+	}
+
+	p {
+		margin: 16px 0;
+	}
+}
+
+code, pre {
+	font-family: var(--font-code) !important;
+	font-size: 14px;
+	background-color: transparent !important;
+}
+
+hr {
+	margin: 32px -24px;
+	border: none;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
 @include desktop {
+	body {
+		overflow: hidden;
+	}
+
 	h1 {
 		font-size: 32px;
 	}
@@ -97,5 +186,13 @@ ul {
 		margin-left: 0;
 		margin-right: 0;
 		gap: 8px;
+	}
+
+	code, pre {
+		font-size: 14px;
+	}
+
+	hr {
+		margin: 32px 0;
 	}
 }
