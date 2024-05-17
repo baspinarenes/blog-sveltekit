@@ -22,6 +22,6 @@
 	.journey-page {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 48px;
 	}
 </style>

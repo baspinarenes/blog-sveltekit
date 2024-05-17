@@ -24,6 +24,7 @@
 		height: calc(100vh - 64px);
 		color: var(--color-light-gray);
 		width: 100%;
+		text-align: center;
 
 		p {
 			font-size: 18px;

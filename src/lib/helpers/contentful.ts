@@ -48,10 +48,13 @@ export class ContentfulClient {
 		return {
 			content: async () => {
 				const { ok, result } = await this.get(this.query.category);
-
+				console.log('ok', ok);
+				console.log('result', result);
 				if (!ok) return null;
 
 				const item = result.data[this.collection + 'Collection'].items[0];
+
+				console.log('itemitem', item);
 
 				return this.mapper.category(item);
 			},

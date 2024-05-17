@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ContentStatus, ContentMenu } from '$lib/components';
+	import { ContentStatus } from '$lib/components';
 	import ContentList from '$lib/components/content/content-list.svelte';
 
 	export let data;
@@ -20,6 +20,7 @@
 <style lang="scss">
 	.phone {
 		display: flex;
+		// text-align: center;
 	}
 
 	.desktop {

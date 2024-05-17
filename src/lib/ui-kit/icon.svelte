@@ -22,7 +22,14 @@
 		IconCommand,
 		IconCopy,
 		IconCheck,
-		IconBug
+		IconBug,
+		IconBrandHtml5,
+		IconBrandCss3,
+		IconBrandTypescript,
+		IconBrandJavascript,
+		IconFileCode2,
+		IconTerminal2,
+		IconBrandGitlab
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
@@ -42,6 +49,14 @@
 		tool: IconTools,
 		culture: IconMasksTheater,
 		thought: IconBrain,
+
+		html: IconBrandHtml5,
+		css: IconBrandCss3,
+		typescript: IconBrandTypescript,
+		javascript: IconBrandJavascript,
+		bash: IconTerminal2,
+		yaml: IconFileCode2,
+		gitlab: IconBrandGitlab,
 
 		external: IconArrowUpRight,
 		language: IconLanguage,

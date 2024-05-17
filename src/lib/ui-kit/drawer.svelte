@@ -44,6 +44,7 @@
 			border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 			padding: var(--spacing-lg) var(--spacing-lg) 0;
 			z-index: 1000;
+			overflow-y: auto;
 
 			.header {
 				display: flex;

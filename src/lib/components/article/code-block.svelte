@@ -22,14 +22,12 @@
 	} from 'svelte-highlight/languages';
 	import { Icon } from '$lib/ui-kit';
 
-	export let lang: string;
+	export let lang: string; // metadata
 	export let text: string;
-	export let file: string;
-	export let raw: string;
-	export let filename: string;
 	export let lineNumber: boolean = true;
 
-	$: [language, fileName] = lang.split(/\s/);
+	$: language = lang.split(/\s/)[0];
+	$: fileName = lang.split(/\s/)[1];
 
 	$: languageFile =
 		({
@@ -50,8 +48,6 @@
 			plaintext
 		}[language] as LanguageType<string>) || plaintext;
 
-	console.log('language', language);
-
 	let TypelessLineNumbers = LineNumbers as any;
 </script>
 
@@ -67,7 +63,7 @@
 		</div>
 	</div>
 {:else if language === ''}
-	<div class="code">
+	<div class="code-plain">
 		<Highlight language={languageFile} code={text} />
 	</div>
 {:else}
@@ -80,6 +76,9 @@
 			</div>
 			<span class="file-name">{fileName}</span>
 			<CopyButton content={text} />
+			<div class="icon-container">
+				<Icon name={language} size={20} />
+			</div>
 		</div>
 		<div class="body">
 			<Highlight
@@ -102,39 +101,13 @@
 	</div>
 {/if}
 
-<!-- 
- <div className={twMerge("border-x border border-gray-200 rounded-lg overflow-hidden mb-6", className)}>
-      <div className="flex flex-wrap items-center justify-between gap-2 rounded-t-lg border-b border-gray-200 bg-gray-50 py-1.5 pl-4 pr-2">
-        <div className="flex items-center gap-4">
-          <span className="inline-flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 lg:h-4 lg:w-4 rounded-full bg-gray-200" />
-            <span className="h-2.5 w-2.5 lg:h-4 lg:w-4 rounded-full bg-gray-200" />
-            <span className="h-2.5 w-2.5 lg:h-4 lg:w-4 rounded-full bg-gray-200" />
-          </span>
-          <p className="m-0 text-xs font-medium select-none">{title}</p>
-        </div>
-        <CopyButton code={code} language={language} />
-      </div>
-      <SyntaxHighlighter
-        language={language}
-        style={coy}
-        showLineNumbers={true}
-        customStyle={{ margin: 0, padding: 0 }}
-        lineNumberStyle={{ marginRight: 4, marginBottom: 1 }}
-      >
-        {code.trim()}
-      </SyntaxHighlighter>
-    </div>
-
- -->
-
 <style lang="scss">
 	.code-result {
 		width: 100%;
 		position: relative;
 		border-radius: 0 0 12px 12px;
 		border: 1px solid var(--border-color);
-		padding: 12px 46px 12px 12px;
+		padding: 0 46px 0 12px;
 		margin-top: -35px;
 		margin-bottom: 32px;
 		background-color: #f9fafb;
@@ -142,7 +115,7 @@
 
 		.bug-icon {
 			position: absolute;
-			top: 10px;
+			bottom: 16px;
 			right: 18px;
 			z-index: 10;
 			color: #94a3b8;
@@ -158,26 +131,23 @@
 		margin: 32px 0;
 		overflow: hidden;
 
-		&:has(+ pre .code-result) {
-			& > *:first-child {
-				border-bottom-left-radius: 0 !important;
-				border-bottom-right-radius: 0 !important;
-				margin-bottom: 15px !important;
-			}
+		&:has(+ .code-result) {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 
 		.header {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			gap: 20px;
 			background-color: #f9fafb;
-			padding: 6px 8px 6px 16px;
+			padding: 6px 16px 6px 16px;
 			border-bottom: 1px solid #e5e7eb;
 
 			.bullets {
 				display: flex;
 				gap: 4px;
+				margin-right: 12px;
 
 				span {
 					display: inline-block;
@@ -188,22 +158,33 @@
 				}
 			}
 
+			.icon-container {
+				&:empty {
+					display: none;
+				}
+			}
+
 			.file-name {
 				font-size: 14px;
 				color: #1f2937;
 				margin-right: auto;
-				line-height: 0;
 			}
 		}
 
 		.body {
+			:global(div div) {
+				@include scroll-bar(6px, 6px);
+			}
+
 			:global(td:last-child) {
 				padding-left: 0;
 			}
 		}
 	}
 
-	.code {
+	.code-plain {
+		margin: 32px 0;
+
 		:global(pre code) {
 			width: 100%;
 			position: relative;

@@ -2,7 +2,7 @@
 	import { formatDate } from '$lib/helpers';
 	import { page } from '$app/stores';
 	import SvelteMarkdown from 'svelte-markdown';
-	import { CodeBlock, Blockquote } from '$lib/components';
+	import { CodeBlock, Blockquote, ProfileCard } from '$lib/components';
 
 	export let data;
 </script>
@@ -32,7 +32,7 @@
 		max-width: 800px;
 		width: 100%;
 		margin: 0 auto;
-		padding: 24px 24px 12px;
+		padding: 24px;
 
 		.title {
 			font-size: 32px;
@@ -50,6 +50,7 @@
 
 		.content {
 			margin-top: 18px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -59,6 +60,7 @@
 
 			.content {
 				margin-top: 32px;
+				margin-bottom: 0;
 			}
 		}
 	}
