@@ -3,18 +3,17 @@
 	import { locale } from '$lib/i18n';
 	import { page } from '$app/stores';
 	import { Icon } from '$lib/ui-kit';
+	import { ViewCount } from '$lib/components';
 
 	export let title: string;
 	export let publishedAt: Date;
 	export let slug: string;
-	export let views: number | undefined;
 	export let category: string;
 	export let readingTime: number | undefined;
 
+	$: contentPathname = `/${$page.params.language}/${$page.params.category}/${slug}`;
 	$: path = `/${$locale}/${$page.params.category}/${slug}`;
-	$: active = $page.url.pathname.includes(
-		`/${$page.params.language}/${$page.params.category}/${slug}`
-	);
+	$: active = $page.url.pathname.includes(contentPathname);
 </script>
 
 <a class="content-menu-item" class:active href={path}>
@@ -24,10 +23,7 @@
 			{formatDate(publishedAt, $locale)}
 		</time>
 		<span class="category"> #{category.toLowerCase().replace('/', '-')} </span>
-		<span class="views">
-			<Icon name="view" size={10} />
-			{views || '---'}
-		</span>
+		<ViewCount {path} />
 		<span class="reading-time">
 			<Icon name="clock" size={10} />
 			{readingTime || '---'}

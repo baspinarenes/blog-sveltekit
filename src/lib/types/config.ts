@@ -1,5 +1,6 @@
 export type Config = {
 	title: string;
+	url: string;
 	author: {
 		name: string;
 		surname: string;

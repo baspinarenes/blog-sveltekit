@@ -11,7 +11,6 @@
 			title={content.title}
 			publishedAt={content.publishedAt}
 			slug={content.slug}
-			views={content.views}
 			category={content.category}
 			readingTime={content.readingTime}
 		/>

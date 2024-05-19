@@ -24,7 +24,6 @@ export type Content = {
 	publishedAt: Date;
 	category: string;
 	description?: string;
-	views?: number;
 	readingTime?: number;
 	content?: any;
 	context?: string;

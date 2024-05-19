@@ -3,11 +3,11 @@
 	import { Icon } from '$lib/ui-kit';
 	import { locale } from '$lib/i18n';
 	import { page } from '$app/stores';
+	import { ViewCount } from '$lib/components';
 
 	export let title: string;
 	export let publishedAt: Date;
 	export let slug: string;
-	export let views: number | undefined;
 	export let category: string;
 	export let readingTime: number | undefined;
 
@@ -21,10 +21,7 @@
 			{formatDate(publishedAt, $locale)}
 		</time>
 		<span class="category"> #{category.toLowerCase().replace('/', '-')} </span>
-		<span class="views">
-			<Icon name="view" size={13} />
-			{views || '---'}
-		</span>
+		<ViewCount path={path} />
 		<span class="reading-time">
 			<Icon name="clock" size={13} />
 			{readingTime || '---'}
@@ -72,7 +69,6 @@
 				margin-right: auto;
 			}
 
-			.views,
 			.reading-time {
 				display: flex;
 				align-items: center;

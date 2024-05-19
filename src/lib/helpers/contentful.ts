@@ -3,6 +3,7 @@ import {
 	PUBLIC_CONTENTFUL_ACCESS_TOKEN
 } from '$env/static/public';
 import type { Content, ContentfulContent, Journey } from '$lib/types';
+import { getPageView } from './supabase';
 
 export class ContentfulClient {
 	language: string;
@@ -48,11 +49,12 @@ export class ContentfulClient {
 		return {
 			content: async () => {
 				const { ok, result } = await this.get(this.query.category);
+
 				if (!ok) return null;
 
 				const item = result.data[this.collection + 'Collection'].items[0];
 
-				return this.mapper.category(item);
+				return this.mapper.content(item);
 			},
 			contents: async () => {
 				const { ok, result } = await this.get(this.query.categories);
@@ -63,7 +65,7 @@ export class ContentfulClient {
 					result.data[this.collection + 'Collection'].items;
 
 				const filteredItems = items.filter((x) => x.context);
-				const mappedItems = this.mapper.categories(filteredItems);
+				const mappedItems = this.mapper.contents(filteredItems);
 
 				return mappedItems;
 			},
@@ -100,7 +102,7 @@ export class ContentfulClient {
 
 	get mapper() {
 		return {
-			category: (item: ContentfulContent): Content => {
+			content: (item: ContentfulContent): Content => {
 				return {
 					title: item.title,
 					description: item.description,
@@ -109,18 +111,16 @@ export class ContentfulClient {
 					context: item.context,
 					tags: item.tags,
 					coverImage: item.coverImage,
-					slug: item.slug,
-					views: 0
+					slug: item.slug
 				};
 			},
-			categories: (items: ContentfulContent[]): Content[] => {
+			contents: (items: ContentfulContent[]): Content[] => {
 				return items.map((item: ContentfulContent) => ({
 					title: item.title,
 					slug: item.slug,
 					category: item.category,
 					publishedAt: new Date(item.sys.publishedAt),
 					context: item.context,
-					views: 0,
 					readingTime: 0
 				}));
 			},

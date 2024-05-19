@@ -2,6 +2,7 @@ import type { Config } from '$lib/types';
 
 const config: Config = {
 	title: 'Enes Başpınar',
+	url: 'https://www.enesbaspinar.com',
 	author: {
 		name: 'Enes',
 		surname: 'Başpınar',

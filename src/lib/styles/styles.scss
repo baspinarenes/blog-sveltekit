@@ -155,12 +155,14 @@ article {
 	}
 
 	p, li {
-		margin: 16px 0;
-
 		code {
 			color: #ec4899 !important;
 			font-weight: 600;
 		}
+	}
+
+	p {
+		margin: 16px 0;
 	}
 }
 
