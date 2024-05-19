@@ -5,12 +5,15 @@
 		HeaderTitle
 	} from '$lib/components';
 	import { Spacer } from '$lib/ui-kit';
+	import { page } from '$app/stores';
 
 	export let titleKey = '';
+
+	$: isCollectionItem = $page.params.slug !== undefined;
 </script>
 
 <div class="mobile-header">
-	<HamburgerMenuButton />
+	<HamburgerMenuButton asBackButton={isCollectionItem} />
 	<Spacer size="md" type="width" />
 	<HeaderTitle {titleKey} />
 	<Spacer type="width" />

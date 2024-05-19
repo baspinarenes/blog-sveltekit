@@ -29,7 +29,8 @@
 		IconBrandJavascript,
 		IconFileCode2,
 		IconTerminal2,
-		IconBrandGitlab
+		IconBrandGitlab,
+		IconArrowLeft
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
@@ -68,7 +69,8 @@
 		command: IconCommand,
 		copyboard: IconCopy,
 		complete: IconCheck,
-		bug: IconBug
+		bug: IconBug,
+		back: IconArrowLeft
 	}[name];
 </script>
 

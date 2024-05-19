@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { Icon } from '$lib/ui-kit';
 
-	export let content: string;
+	export let text: string = '';
 
 	let copied = false;
 
 	let copyToClipboard = () => {
 		copied = true;
-		navigator.clipboard.writeText(content);
-		setTimeout(() => (copied = false), 1500);
+		navigator.clipboard.writeText(text);
+		setTimeout(() => {
+			copied = false;
+		}, 1500);
 	};
 
 	$: iconName = copied ? 'complete' : 'copyboard';

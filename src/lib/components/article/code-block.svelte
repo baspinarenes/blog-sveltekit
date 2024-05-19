@@ -75,7 +75,7 @@
 				<span></span>
 			</div>
 			<span class="file-name">{fileName}</span>
-			<CopyButton content={text} />
+			<CopyButton {text} />
 			<div class="icon-container">
 				<Icon name={language} size={20} />
 			</div>
