@@ -14,9 +14,7 @@
 	<!-- Mobile -->
 	<MobileHeader titleKey={$page.params.category} />
 
-	<main>
-		<slot />
-	</main>
+	<slot />
 </div>
 
 <style lang="scss">
@@ -24,24 +22,12 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-
-		main {
-			width: 100%;
-			height: 100%;
-		}
 	}
 
 	@include desktop {
 		.app {
 			flex-direction: row;
-			min-height: 100vh;
-
-			main {
-				flex: 1;
-				width: 100%;
-				height: 100vh;
-				// overflow-y: visible;
-			}
+			min-height: 100dvh;
 		}
 	}
 </style>

@@ -16,8 +16,7 @@
 			display: block;
 			height: var(--side-menu-height);
 			width: var(--side-menu-width);
-			min-width: var(--side-menu-min-width);
-			max-width: var(--side-menu-max-width);
+			flex-shrink: 0;
 			background-color: var(--side-menu-bg);
 			border-right: 1px solid var(--border-color);
 			padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);

@@ -5,24 +5,18 @@
 	export let data;
 </script>
 
-<div>
-	<ContentMenu contents={data.contents} />
-	<div class="content">
-		<slot />
-	</div>
+<ContentMenu contents={data.contents} />
+
+<div class="content">
+	<slot />
 </div>
 
 <style lang="scss">
-	div {
+	.content {
 		display: flex;
-		height: 100%;
-
-		.content {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			overflow-y: auto;
-			@include scroll-bar(12px, 8px);
-		}
+		flex-direction: column;
+		width: 100%;
+		overflow-y: auto;
+		@include scroll-bar(12px, 8px);
 	}
 </style>

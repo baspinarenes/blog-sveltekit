@@ -1,31 +1,30 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
 	import { formatDate, updatePageView } from '$lib/helpers';
 	import { page } from '$app/stores';
 	import SvelteMarkdown from 'svelte-markdown';
-	import { CodeBlock, Blockquote, ViewCount } from '$lib/components';
-	import { browser } from '$app/environment';
-	import { Icon } from '$lib/ui-kit';
+	import {
+		CodeBlock,
+		Blockquote,
+		ViewCount,
+		ReadingTime
+	} from '$lib/components';
+	import { browser, dev } from '$app/environment';
 	import { views } from '$lib/stores';
 
 	export let data;
-	let timeout: NodeJS.Timeout;
+	let path: string;
 
-	onDestroy(() => {
-		clearTimeout(timeout);
-	});
-
-	$: path = `/${$page.params.language}/${$page.params.category}/${$page.params.slug}`;
 	$: {
-		if (browser) {
-			timeout = setTimeout(() => {
-				updatePageView({
-					language: $page.params.language,
-					category: $page.params.category,
-					slug: $page.params.slug
-				});
-				views.update((value) => ({ ...value, [path]: (value[path] || 0) + 1 }));
-			}, 10000);
+		path = `/${$page.params.language}/${$page.params.category}/${$page.params.slug}`;
+
+		if (browser && !dev) {
+			views.update((value) => ({ ...value, [path]: (value[path] || 0) + 1 }));
+
+			updatePageView({
+				language: $page.params.language,
+				category: $page.params.category,
+				slug: $page.params.slug
+			});
 		}
 	}
 </script>
@@ -41,17 +40,12 @@
 				#{$page.params.category.toLowerCase().replace('/', '-')}
 			</span>
 			<ViewCount {path} />
-			<span class="reading-time">
-				<Icon name="clock" size={10} />
-				{data.content.readingTime || '---'}
-			</span>
+			<ReadingTime value={data.content.readingMinute} />
 		</div>
-		<div class="content">
-			<SvelteMarkdown
-				source={data.content.context}
-				renderers={{ code: CodeBlock, blockquote: Blockquote }}
-			/>
-		</div>
+		<SvelteMarkdown
+			source={data.content.context}
+			renderers={{ code: CodeBlock, blockquote: Blockquote }}
+		/>
 	</article>
 {/if}
 
@@ -74,6 +68,7 @@
 			gap: 12px;
 			font-size: 14px;
 			color: var(--color-gray);
+			margin-bottom: 18px;
 
 			.category {
 				margin-right: auto;
@@ -86,20 +81,14 @@
 				gap: var(--spacing-xs);
 			}
 		}
-
-		.content {
-			margin-top: 18px;
-			margin-bottom: 30px;
-		}
 	}
 
 	@include desktop {
 		.content-container {
-			padding: 72px 24px 32px;
+			padding: 72px 24px 64px;
 
-			.content {
-				margin-top: 32px;
-				margin-bottom: 0;
+			.summary {
+				margin-bottom: 32px;
 			}
 		}
 	}

@@ -24,7 +24,7 @@ export type Content = {
 	publishedAt: Date;
 	category: string;
 	description?: string;
-	readingTime?: number;
+	readingMinute: number;
 	content?: any;
 	context?: string;
 	tags?: string[];

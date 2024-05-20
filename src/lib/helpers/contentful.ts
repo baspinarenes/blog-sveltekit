@@ -3,7 +3,7 @@ import {
 	PUBLIC_CONTENTFUL_ACCESS_TOKEN
 } from '$env/static/public';
 import type { Content, ContentfulContent, Journey } from '$lib/types';
-import { getPageView } from './supabase';
+import { calculateReadingMinute } from './common';
 
 export class ContentfulClient {
 	language: string;
@@ -111,7 +111,8 @@ export class ContentfulClient {
 					context: item.context,
 					tags: item.tags,
 					coverImage: item.coverImage,
-					slug: item.slug
+					slug: item.slug,
+					readingMinute: calculateReadingMinute(item.context)
 				};
 			},
 			contents: (items: ContentfulContent[]): Content[] => {
@@ -121,7 +122,7 @@ export class ContentfulClient {
 					category: item.category,
 					publishedAt: new Date(item.sys.publishedAt),
 					context: item.context,
-					readingTime: 0
+					readingMinute: calculateReadingMinute(item.context)
 				}));
 			},
 			staticPage: (item: ContentfulContent): Content => {
@@ -130,6 +131,7 @@ export class ContentfulClient {
 					slug: item.slug,
 					category: item.category,
 					contentJson: item.content.json,
+					readingMinute: -1,
 					publishedAt: new Date(item.sys.publishedAt)
 				};
 			}

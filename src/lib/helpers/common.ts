@@ -40,3 +40,8 @@ export function formatDate(date: Date, language: string) {
 export function orderAlphabetically(a: string, b: string) {
 	return b.localeCompare(a);
 }
+export function calculateReadingMinute(content: string = '') {
+	const wordsPerMinute = 180;
+	const wordCount = content.match(/\b\w+\b/g)?.length || 0;
+	return Math.ceil(wordCount / wordsPerMinute);
+}

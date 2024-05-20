@@ -164,6 +164,10 @@ article {
 	p {
 		margin: 16px 0;
 	}
+
+	&> *:last-child {
+		margin-bottom: 0 !important;
+	}
 }
 
 code, pre {
@@ -192,7 +196,7 @@ hr {
 		padding-left: 0;
 		margin-left: 0;
 		margin-right: 0;
-		gap: 8px;
+		gap: 12px;
 	}
 
 	code, pre {

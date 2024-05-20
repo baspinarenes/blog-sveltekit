@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { formatDate } from '$lib/helpers';
-	import { Icon } from '$lib/ui-kit';
 	import { locale } from '$lib/i18n';
 	import { page } from '$app/stores';
-	import { ViewCount } from '$lib/components';
+	import { ViewCount, ReadingTime } from '$lib/components';
 
 	export let title: string;
 	export let publishedAt: Date;
 	export let slug: string;
 	export let category: string;
-	export let readingTime: number | undefined;
+	export let readingMinute: number;
 
 	$: path = `/${$locale}/${$page.params.category}/${slug}`;
 </script>
@@ -21,11 +20,8 @@
 			{formatDate(publishedAt, $locale)}
 		</time>
 		<span class="category"> #{category.toLowerCase().replace('/', '-')} </span>
-		<ViewCount path={path} />
-		<span class="reading-time">
-			<Icon name="clock" size={13} />
-			{readingTime || '---'}
-		</span>
+		<ViewCount {path} />
+		<ReadingTime value={readingMinute} />
 	</div>
 </a>
 

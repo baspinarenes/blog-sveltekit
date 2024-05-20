@@ -11,7 +11,7 @@
 }
 
 @mixin scroll-bar ($width, $height) {
-  @include desktop {
+  @include desktop {    
     &::-webkit-scrollbar {
       width: $width;
       height: $height;

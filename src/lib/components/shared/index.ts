@@ -5,3 +5,4 @@ export { default as ContentStatus } from './content-status.svelte';
 export { default as RichText } from './rich-text.svelte';
 export { default as ProfileCard } from './profile-card.svelte';
 export { default as ViewCount } from './view-count.svelte';
+export { default as ReadingTime } from './reading-time.svelte';

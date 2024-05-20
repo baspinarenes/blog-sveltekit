@@ -12,7 +12,7 @@
 			publishedAt={content.publishedAt}
 			slug={content.slug}
 			category={content.category}
-			readingTime={content.readingTime}
+			readingMinute={content.readingMinute}
 		/>
 	{/each}
 </div>

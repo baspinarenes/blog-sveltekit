@@ -21,7 +21,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: var(--spacing-md);
-		height: calc(100vh - 64px);
+		height: calc(100dvh - 64px);
 		color: var(--color-light-gray);
 		width: 100%;
 		text-align: center;
