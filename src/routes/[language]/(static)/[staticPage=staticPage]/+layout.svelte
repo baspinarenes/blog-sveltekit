@@ -9,6 +9,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		width: 100%;
 
 		div {
 			max-width: 800px;
@@ -21,8 +22,8 @@
 	@include desktop {
 		.static-layout {
 			div {
-				padding: 96px 24px 32px;
+				padding: 96px 40px 32px;
 			}
-		}	
+		}
 	}
 </style>

@@ -10,6 +10,7 @@
 		flex-direction: column;
 		height: 100%;
 		overflow-y: auto;
+		width: 100%;
 
 		div {
 			max-width: 800px;
@@ -22,7 +23,7 @@
 	@include desktop {
 		.static-layout {
 			div {
-				padding: 96px 24px 32px;
+				padding: 96px 40px 32px;
 			}
 		}
 	}
