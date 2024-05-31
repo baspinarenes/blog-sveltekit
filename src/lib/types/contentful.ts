@@ -19,6 +19,7 @@ export type ContentfulContent = {
 };
 
 export type Content = {
+	type?: string;
 	title: string;
 	slug: string;
 	publishedAt: Date;

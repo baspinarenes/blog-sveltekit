@@ -29,25 +29,13 @@
 	.content-item {
 		display: flex;
 		flex-direction: column;
-		padding: 12px 22px;
+		padding: 12px 24px;
 		border-bottom: 1px solid var(--border-color);
 		color: var(--color-text);
 		gap: var(--spacing-xs);
 
 		&:hover {
 			background-color: var(--color-light-gray);
-		}
-
-		&.active {
-			color: var(--side-menu-navigation-active-text-color);
-			background-color: var(--side-menu-navigation-active-bg);
-			cursor: default;
-			pointer-events: none;
-		}
-
-		&:not(.active):hover {
-			background-color: var(--side-menu-navigation-hover-bg);
-			transition: background-color 200ms linear;
 		}
 
 		.title {
@@ -63,12 +51,6 @@
 
 			.category {
 				margin-right: auto;
-			}
-
-			.reading-time {
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-xs);
 			}
 		}
 	}

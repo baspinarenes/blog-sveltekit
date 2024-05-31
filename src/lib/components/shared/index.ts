@@ -6,3 +6,5 @@ export { default as RichText } from './rich-text.svelte';
 export { default as ProfileCard } from './profile-card.svelte';
 export { default as ViewCount } from './view-count.svelte';
 export { default as ReadingTime } from './reading-time.svelte';
+export { default as CategoryBadge } from './category-badge.svelte';
+export { default as MobileEntriesTable } from './mobile-entries-table.svelte';

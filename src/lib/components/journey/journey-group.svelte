@@ -7,7 +7,7 @@
 </script>
 
 <div class="journey-group">
-	<span class="year">{year}</span>
+	<h3 class="year">{year}</h3>
 	<ul>
 		{#each items as journeyItem}
 			<JourneyItem
@@ -23,7 +23,6 @@
 	.journey-group {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
 
 		ul {
 			margin: 0;
@@ -32,7 +31,7 @@
 		}
 
 		.year {
-			font-size: 24px;
+			font-size: 22px;
 			line-height: 36px;
 			font-weight: 500;
 		}
@@ -44,6 +43,10 @@
 
 			ul {
 				margin: 0;
+			}
+
+			.year {
+				margin-right: 24px;
 			}
 		}
 	}

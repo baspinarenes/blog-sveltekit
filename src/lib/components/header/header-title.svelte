@@ -10,5 +10,6 @@
 <style lang="scss">
 	h2 {
 		font-size: 14px;
+		margin-bottom: 0;
 	}
 </style>

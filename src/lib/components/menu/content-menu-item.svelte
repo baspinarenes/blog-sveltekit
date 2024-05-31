@@ -66,13 +66,6 @@
 			.category {
 				margin-right: auto;
 			}
-
-			.views,
-			.reading-time {
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-xs);
-			}
 		}
 	}
 </style>

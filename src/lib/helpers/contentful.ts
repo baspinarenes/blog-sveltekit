@@ -47,6 +47,32 @@ export class ContentfulClient {
 
 	get request() {
 		return {
+			entries: async () => {
+				const { ok, result } = await this.get(this.query.entries);
+
+				if (!ok) return [];
+
+				const items: Record<
+					string,
+					Record<'items', ContentfulContent[]>
+				> = result.data;
+
+				const mappedItems: Content[] = [];
+
+				Object.keys(items).forEach((key: string) => {
+					const filteredItems = items[key].items.filter((x) => x.context);
+					mappedItems.push(
+						...this.mapper.contents(
+							filteredItems,
+							key.replace('Collection', '')
+						)
+					);
+				});
+
+				return mappedItems.sort(
+					(a, b) => b.publishedAt.getTime() - a.publishedAt.getTime()
+				);
+			},
 			content: async () => {
 				const { ok, result } = await this.get(this.query.category);
 
@@ -115,8 +141,9 @@ export class ContentfulClient {
 					readingMinute: calculateReadingMinute(item.context)
 				};
 			},
-			contents: (items: ContentfulContent[]): Content[] => {
+			contents: (items: ContentfulContent[], type?: string): Content[] => {
 				return items.map((item: ContentfulContent) => ({
+					type,
 					title: item.title,
 					slug: item.slug,
 					category: item.category,
@@ -140,6 +167,54 @@ export class ContentfulClient {
 
 	get query() {
 		return {
+			entries: `
+				query {	
+					articleCollection {
+						items {
+							title
+							slug
+							context
+							sys {
+								publishedAt
+							}
+						}
+					}
+					snippetCollection {
+						items {
+							title
+							slug
+							context
+							sys {
+								publishedAt
+							}
+						}
+					}
+					writingCollection {
+						items {
+							title
+							slug
+							content {
+								json
+							}
+							sys {
+								publishedAt
+							}
+						}
+					}
+					thoughtCollection {
+						items {
+							title
+							slug
+							content {
+								json
+							}
+							sys {
+								publishedAt
+							}
+						}
+					}
+				}
+			`,
 			category: `
 				query {
 					${this.collection}Collection(locale: "${this.language}", where: {

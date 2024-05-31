@@ -37,6 +37,7 @@
 		.header {
 			font-size: 14px;
 			padding: 16px;
+			margin: 0;
 			border-bottom: 1px solid var(--border-color);
 		}
 

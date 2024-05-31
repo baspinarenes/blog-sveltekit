@@ -35,13 +35,14 @@
 	:global(.language-switcher) {
 		display: flex;
 		align-items: center;
-		padding: var(--spacing-xs);
 
 		.flag {
 			display: none;
 		}
 
 		@include desktop {
+			padding: var(--spacing-xs);
+
 			.flag {
 				display: block;
 				width: 100%;

@@ -56,19 +56,12 @@
 		margin: 0 auto;
 		padding: 24px;
 
-		.title {
-			font-size: 32px;
-			line-height: 32px;
-			font-weight: 500;
-			margin-bottom: 12px;
-		}
-
 		.summary {
 			display: flex;
 			gap: 12px;
 			font-size: 14px;
 			color: var(--color-gray);
-			margin-bottom: 18px;
+			margin-bottom: 24px;
 
 			.category {
 				margin-right: auto;

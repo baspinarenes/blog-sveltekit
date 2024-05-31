@@ -22,7 +22,7 @@
 	.journey-page {
 		display: flex;
 		flex-direction: column;
-		gap: 28px;
+		gap: 16px;
 	}
 
 	@include desktop {
