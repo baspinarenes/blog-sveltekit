@@ -30,7 +30,9 @@
 		IconFileCode2,
 		IconTerminal2,
 		IconBrandGitlab,
-		IconArrowLeft
+		IconArrowLeft,
+		IconCoffee,
+		IconBrandCpp
 	} from '@tabler/icons-svelte';
 
 	export let name: string;
@@ -58,6 +60,9 @@
 		bash: IconTerminal2,
 		yaml: IconFileCode2,
 		gitlab: IconBrandGitlab,
+		java: IconCoffee,
+		'c++': IconBrandCpp,
+		cpp: IconBrandCpp,
 
 		external: IconArrowUpRight,
 		language: IconLanguage,
