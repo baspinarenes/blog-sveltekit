@@ -18,6 +18,7 @@
 		yaml,
 		shell,
 		plaintext,
+		cpp,
 		type LanguageType
 	} from 'svelte-highlight/languages';
 	import { Icon } from '$lib/ui-kit';
@@ -45,7 +46,8 @@
 			swift,
 			yaml,
 			shell,
-			plaintext
+			plaintext,
+			cpp
 		}[language] as LanguageType<string>) || plaintext;
 
 	let TypelessLineNumbers = LineNumbers as any;
