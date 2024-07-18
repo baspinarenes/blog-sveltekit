@@ -188,6 +188,10 @@ article {
 	&> *:last-child {
 		margin-bottom: 0 !important;
 	}
+
+	img {
+		border-radius: 12px;
+	}
 }
 
 code, pre {

@@ -61,7 +61,6 @@
 		yaml: IconFileCode2,
 		gitlab: IconBrandGitlab,
 		java: IconCoffee,
-		'c++': IconBrandCpp,
 		cpp: IconBrandCpp,
 
 		external: IconArrowUpRight,

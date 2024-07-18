@@ -27,28 +27,33 @@
 	export let text: string;
 	export let lineNumber: boolean = true;
 
-	$: language = lang.split(/\s/)[0];
-	$: fileName = lang.split(/\s/)[1];
+	let language: string;
+	let fileName: string;
+	let languageFile: LanguageType<string>;
 
-	$: languageFile =
-		({
-			typescript,
-			javascript,
-			bash,
-			css,
-			dockerfile,
-			go,
-			http,
-			json,
-			scss,
-			java,
-			kotlin,
-			swift,
-			yaml,
-			shell,
-			plaintext,
-			cpp
-		}[language] as LanguageType<string>) || plaintext;
+	$: {
+		language = lang.split(/\s/)[0];
+		fileName = lang.split(/\s/)[1];
+		languageFile =
+			({
+				typescript,
+				javascript,
+				bash,
+				css,
+				dockerfile,
+				go,
+				http,
+				json,
+				scss,
+				java,
+				kotlin,
+				swift,
+				yaml,
+				shell,
+				plaintext,
+				cpp
+			}[language] as LanguageType<string>) || plaintext;
+	}
 
 	let TypelessLineNumbers = LineNumbers as any;
 </script>

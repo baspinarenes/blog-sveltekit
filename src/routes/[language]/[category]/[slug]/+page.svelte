@@ -6,12 +6,17 @@
 		CodeBlock,
 		Blockquote,
 		ViewCount,
-		ReadingTime
+		ReadingTime,
+		ListItem,
+		List
 	} from '$lib/components';
 	import { browser, dev } from '$app/environment';
 	import { views } from '$lib/stores';
+	import type { Content } from '$lib/types';
 
-	export let data;
+	export let data: {
+		content: Content;
+	};
 	let path: string;
 
 	$: {
@@ -29,6 +34,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{data.content.title}</title>
+</svelte:head>
+
 {#if !data.content || !data.content.context}
 	<div>Error ocurred during data fetching.</div>
 {:else}
@@ -42,9 +51,21 @@
 			<ViewCount {path} />
 			<ReadingTime value={data.content.readingMinute} />
 		</div>
+		{#if data.content.coverImage}
+			<img
+				class="cover-image"
+				src={data.content.coverImage.url}
+				alt={data.content.title}
+			/>
+		{/if}
 		<SvelteMarkdown
 			source={data.content.context}
-			renderers={{ code: CodeBlock, blockquote: Blockquote }}
+			renderers={{
+				code: CodeBlock,
+				blockquote: Blockquote,
+				list: List,
+				listitem: ListItem
+			}}
 		/>
 	</article>
 {/if}
@@ -73,6 +94,12 @@
 				align-items: center;
 				gap: var(--spacing-xs);
 			}
+		}
+
+		.cover-image {
+			width: 100%;
+			margin-bottom: 32px;
+			border-radius: 12px;
 		}
 	}
 

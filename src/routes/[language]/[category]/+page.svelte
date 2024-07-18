@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { ContentStatus } from '$lib/components';
+	import { capitalize } from '$lib/helpers';
 	import ContentList from '$lib/components/content/content-list.svelte';
 
 	export let data;
 </script>
+
+<svelte:head>
+	<title>{capitalize(data.category)}</title>
+</svelte:head>
 
 <div class="phone">
 	{#if data.contents.length > 0}

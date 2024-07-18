@@ -224,6 +224,12 @@ export class ContentfulClient {
 							title
 							description
 							category
+							coverImage {
+                title
+                url
+                width
+                height
+              }
 							sys {
 								publishedAt
 							}

@@ -63,7 +63,12 @@
 			font-size: 12px;
 			color: var(--color-gray);
 
+			time {
+				margin-right: auto;
+			}
+
 			.category {
+				display: none;
 				margin-right: auto;
 			}
 		}
